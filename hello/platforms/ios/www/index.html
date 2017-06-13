@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <meta charset="utf-8">
+            <title>Hello MUI</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                        
+                        <!--标准mui.css-->
+                        <link rel="stylesheet" href="css/mui.min.css">
+                            <!--App自定义的css-->
+                            <!--<link rel="stylesheet" type="text/css" href="../css/app.css"/>-->
+                            </head>
+    
+    <body>
+        
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+            <h1 class="mui-title">9宫格默认样式</h1>
+        </header>
+        <div class="mui-content">
+            <ul class="mui-table-view mui-grid-view mui-grid-9">
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-home"></span>
+                    <div class="mui-media-body">个人信息</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#" >
+                    <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
+                    <div class="mui-media-body">邮件</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-chatbubble"></span>
+                    <div class="mui-media-body">信息</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-location"></span>
+                    <div class="mui-media-body">位置</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-search"></span>
+                    <div class="mui-media-body">搜索</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-phone"></span>
+                    <div class="mui-media-body">电话</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-gear"></span>
+                    <div class="mui-media-body">Setting</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-info"></span>
+                    <div class="mui-media-body">about</div></a></li>
+                <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+                    <span class="mui-icon mui-icon-more"></span>
+                    <div class="mui-media-body">more</div></a></li>
+            </ul>
+        </div>
+    </body>
+    <script src="js/jquery-1.11.3.min.js"></script>
+    <script src="js/mui.min.js"></script>
+     <script type="text/javascript" src="cordova.js"></script>
+    <script>
+        mui.init({
+                 swipeBack:true //启用右滑关闭功能
+                 });
+        </script>
+    <script>
+    
+                          
+   
+    function getData(){
+       
+            //请在这里填写你的请求的url
+            var url="";
+        cordova.exec(myinfo,null,"HttpRequest","httppost",[url,"post",null]);
+                              
+                          }
+    
+    function myinfo(result){
+        var d = JSON.parse(result);
+        navigator.notification.alert("信息", d.name, "提示", "知道了");
+    }
+    </script>
+    <script>
+        mui(".mui-table-view").on('tap','li',function(){
+                                  var val=$(this).find('div').text();
+                                  if(val=="个人信息"){
+                                  getData();
+                                  }else if(val=="邮件"){
+                                  getData();
+                                  }
+                                  
+                                  })
+                                  
+        </script>
+    
+</html>

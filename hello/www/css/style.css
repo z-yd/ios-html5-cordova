@@ -1,0 +1,72 @@
+.ui-page-login,
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+.mui-content{height: 100%;}
+.rg-active{
+	color: #dd524d !important;
+}
+.mui-input-group h4{
+	padding: 10px;
+	border-bottom: 1px solid #c8c7cc;
+}
+.mui-input-group h4 span{
+	float: right;
+	font-size: 0.1em;
+	color: lightseagreen;
+	margin-top: 5px;
+	font-weight: 100;
+}
+.success-get{
+	background-color: #fff;
+	margin:10px 0px;
+	padding:20px 0px;
+}
+.success-get h4{
+	text-align: center;
+}
+.success-get h4 span{
+	font-size: 50px;
+	font-weight: bold;
+	vertical-align: -8px;
+	color: forestgreen;
+}
+ em{
+	font-style: normal;
+	 font-size: 0.4em;
+	 font-weight: 100;
+}
+ b{
+	 color: #dd524d;
+	 margin-left: 1em;
+ }
+ cite{
+     font-style: normal;
+	 font-family: "微软雅黑";
+
+ }
+.success-get p{
+	color:#dd524d;
+	padding: 0 10px;
+	margin-left: 10px;
+	margin-right: 10px;
+}
+.mui-content h5{
+	padding: 10px;
+}
+.icon-color{
+	color:#ec971f;
+}
+.black_overlay
+{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.1);
+    top:0;
+    left: 0;
+    z-index:1;
+}

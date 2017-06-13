@@ -39,11 +39,16 @@ iOS+html5+cordova
 六、cordova、ios、h5交互将会在demo中给出。
    1.在config.xml中配置弹框
         
+        
    2.创建自己的插件
+   
       自定义插件需要在Plugins目录下创建，名字可以随意
+      
    3.config.xml里面配置创建好的插件
      
+     
    4.ios使用AFNetworking插件请求数据
+   
 AFNetworking可以百度搜索下导入方法，也可以直接使用demo中的AFNetworking
 
 
